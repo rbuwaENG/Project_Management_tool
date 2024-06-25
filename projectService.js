@@ -8,6 +8,7 @@ class ProjectService {
     this.getAll();
   }
 
+<<<<<<< HEAD
 // read json 
   async readJson(){
     const response = await fetch('project.json')
@@ -63,10 +64,27 @@ class ProjectService {
  
 }
     
+=======
+  async readjson() {
+    const response = await fetch('project.json');
+    const data = await response.json();
+    const projects = [];
+    data.projects.forEach(projectData => {
+      projects.push(new Project(projectData.id, projectData.name, projectData.revenue, projectData.status));
+    });
+    return projects;
+>>>>>>> feature/FI-690-read-Jason-file
   }
-  
 
-
+<<<<<<< HEAD
 
 
 export default ProjectService;
+=======
+async getAll() {
+  const projects = await this.readjson();
+  return projects;
+  }
+}
+export default ProjectService;
+>>>>>>> feature/FI-690-read-Jason-file

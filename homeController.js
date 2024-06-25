@@ -6,11 +6,16 @@ class HomeController {
  //create object from project service 
  projectService = new ProjectService();
   
-  initialize() {
+  async initialize() {
       //get all 
+<<<<<<< HEAD
       this.projectService.getAll().then(projects => {
         this.fillList(projects);
       });
+=======
+    const projects = await this.projectService.getAll();
+    this.fillList(projects);
+>>>>>>> feature/FI-690-read-Jason-file
   }
 
   fillList(projects) {
@@ -41,5 +46,4 @@ class HomeController {
     });
   }
 }
-
 export default HomeController;
