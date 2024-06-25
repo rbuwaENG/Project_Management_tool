@@ -6,9 +6,9 @@ class HomeController {
  //create object from project service 
  projectService = new ProjectService();
   
-  initialize() {
+  async initialize() {
       //get all 
-    const projects = this.projectService.getAll();
+    const projects = await this.projectService.getAll();
     this.fillList(projects);
   }
 
@@ -40,5 +40,4 @@ class HomeController {
     });
   }
 }
-
 export default HomeController;

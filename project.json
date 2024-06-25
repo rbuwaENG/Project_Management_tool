@@ -1,0 +1,13 @@
+{
+    "projects": [
+      { "id": 1, "name" :"Project Breeze", "revenue": 20000, "status": "On going" },
+      { "id": 2, "name" :"Command Program", "revenue": 10000, "status": "On going" },
+      { "id": 3, "name" :"Project Point", "revenue": 15000, "status": "Completed" },
+      { "id": 4, "name" :"Project Mecha", "revenue": 30000, "status": "On going" },
+      { "id": 5, "name" :"Program Pad", "revenue": 16000, "status": "On going" },
+      { "id": 6, "name" :"Project Synergy", "revenue": 18000, "status": "On going" },
+      { "id": 7, "name" :"Dynamic Program", "revenue": 31000, "status": "On going" },
+      { "id": 8, "name" :"Project ZenSen", "revenue": 22000, "status": "On going" }
+    ],
+    "version": "1.0.1"
+  }
