@@ -2,8 +2,21 @@
 import Project from './project.js';
 
 class ProjectService {
+
+// read json 
+   async readjson(){
+    const response = await fetch('project.json')
+    const data  =  await response.json()
+    //update in cosole 
+    data.projects.forEach(projectsInFile => {
+      console.log(projectsInFile.id);
+      console.log(projectsInFile.name);
+    });
+   
+  }
 //function 
-  getAll() {
+getAll() {
+  this.readjson()
       //hard coded array of projectcs 
       // id ||  name || revenue || status
     const projects = [
@@ -15,8 +28,13 @@ class ProjectService {
       new Project(6, 'Project Synergy', 22000, 'Completed'),
       new Project(7, 'Dynamic Program', 31000, 'On going'),
     ];
+    
+  
     return projects;
   }
+  
+
+
 }
 
 export default ProjectService;
