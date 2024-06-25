@@ -2,7 +2,6 @@
 import Project from './project.js';
 
 class ProjectService {
-
   async readjson() {
     const response = await fetch('project.json');
     if (!response.ok) {
@@ -13,12 +12,13 @@ class ProjectService {
     data.projects.forEach(projectData => {
       projects.push(new Project(projectData.id, projectData.name, projectData.revenue, projectData.status));
     });
-    return projects;
-  }
 
-async getAll() {
-  const projects = await this.readjson();
-  return projects;
-  }
-}
-export default ProjectService;
+    return projects;}
+    async getAll() {
+      const projects = await this.readjson();
+      console.log([projects]);
+      return projects;
+      }
+    }
+    
+    export default ProjectService;
