@@ -8,8 +8,9 @@ class HomeController {
   
   initialize() {
       //get all 
-    const projects = this.projectService.getAll();
-    this.fillList(projects);
+      this.projectService.getAll().then(projects => {
+        this.fillList(projects);
+      });
   }
 
   fillList(projects) {
