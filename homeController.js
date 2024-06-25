@@ -8,40 +8,26 @@ class HomeController {
   
   async initialize() {
       //get all 
-<<<<<<< HEAD
-      this.projectService.getAll().then(projects => {
-        this.fillList(projects);
-      });
-=======
     const projects = await this.projectService.getAll();
     this.fillList(projects);
->>>>>>> feature/FI-690-read-Jason-file
   }
 
+  createCell(row, Content) {
+    const cell = document.createElement('td');
+    cell.textContent = Content;
+    row.appendChild(cell);
+  }
+  
   fillList(projects) {
     //fill the table by each row 
     const projectObject = document.getElementById('tableBody');
     projectObject.innerHTML = ' ';
-
     projects.forEach(project => {
       const row = document.createElement('tr');
-
-      const idCol = document.createElement('td');
-      idCol.textContent = project.id;
-      row.appendChild(idCol);
-
-      const nameCol = document.createElement('td');
-      nameCol.textContent = project.name;
-      row.appendChild(nameCol);
-
-      const revenueCol = document.createElement('td');
-      revenueCol.textContent =  `$${project.revenue}`;
-      row.appendChild(revenueCol);
-
-      const statusCol = document.createElement('td');
-      statusCol.textContent = project.status;
-      row.appendChild(statusCol);
-
+      this.createCell(row, project.id)
+      this.createCell(row, project.name)
+      this.createCell(row, `$${project.revenue}`)
+      this.createCell(row, project.status)
       projectObject.appendChild(row);
     });
   }

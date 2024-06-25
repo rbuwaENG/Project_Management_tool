@@ -9,10 +9,11 @@ class ProjectService {
     data.projects.forEach(projectData => {
       projects.push(new Project(projectData.id, projectData.name, projectData.revenue, projectData.status));
     });
-    
+
     return projects;}
     async getAll() {
       const projects = await this.readjson();
+      console.log([projects]);
       return projects;
       }
     }
