@@ -29,7 +29,7 @@ class HomeController {
       row.appendChild(nameCol);
 
       const revenueCol = document.createElement('td');
-      revenueCol.textContent = project.revenue;
+      revenueCol.textContent = `$${project.revenue}`;//added $ sign 
       row.appendChild(revenueCol);
 
       const statusCol = document.createElement('td');
